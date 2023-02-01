@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Number guessing</h1>
+    <p>enter the value</p>
+    <input type="text" id="num">
+    <button onclick="rand()">Check</button>
+    <p id="result"></p>
+    <script>
+        let randomnumber=Math.ceil(Math.random()*100);
+        function rand(){
+            let num=parseInt(document.getElementById("num").value);
+            let result=document.getElementById("result");
+
+            if(randomnumber===num){
+                document.getElementById("result").textContent="correct";
+            }
+            else if(randomnumber<num){
+                document.getElementById("result").textContent="large";
+            }
+            else if(randomnumber>num){
+                document.getElementById("result").textContent="small";
+            }
+            else{
+                document.getElementById("result").textContent="invalid";
+            }
+        }
+        console.log(randomnumber);
+    </script>
+</body>
+</html>

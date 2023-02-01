@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>AGE CALCULATOR</h1>
+    <p>enter your date of birth : </p>
+    <input type="date" id="dob">
+    <button type="submit" onclick="agecal()">Calculate</button>
+    <p id="result"></p>
+    <script>
+        function agecal(){
+            var userinput = document.getElementById("dob").value;
+            var DOB = new Date(userinput);
+            var month_diff = Date.now() - DOB.getTime();
+            var age_dt = new Date(month_diff); 
+            var year = age_dt.getUTCFullYear();
+            var age = Math.abs(year - 1970);
+            return document.getElementById("result").textContent =  
+                    "Age is: " + age + " years. ";
+
+        }
+    </script>
+</body>
+</html>

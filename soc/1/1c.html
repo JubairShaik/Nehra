@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            font-size: 30px;
+            padding-left: 40px;
+            padding-right: 50px;
+            color: crimson;
+        }
+    </style>
+</head>
+<body>
+    <h1>Counter</h1>
+    <p id="countervalue">0</p>
+    <div>
+        <button onclick="onincrement()">Increment</button>
+        <button onclick="ondecrement()">decrement</button>
+        <button onclick="reset()">Reset</button>
+    </div>
+
+    <script>
+        let counter=document.getElementById("countervalue").textContent;
+        function onincrement(){
+            let previous=counter;
+            let update=parseInt(previous)+1;
+            counter=update;
+            document.getElementById("countervalue").textContent=counter;
+            document.getElementById("countervalue").style.color="green";
+        }
+        function ondecrement(){
+            let previous=counter;
+            let update=parseInt(previous)-1;
+            counter=update;
+            document.getElementById("countervalue").textContent=counter;
+            document.getElementById("countervalue").style.color="blue";
+        }
+        function reset(){
+            counter=0
+            document.getElementById("countervalue").textContent=counter;
+            document.getElementById("countervalue").style.color="red";
+        }
+    </script>
+</body>
+</html>

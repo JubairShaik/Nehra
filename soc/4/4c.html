@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Find the number</h1>
+    <p>Find number between 0 to 100</p>
+    <input type="number" id="user">
+    <button onclick="rand()">Check</button>
+    <p id="result"></p>
+    <script>
+
+        let targetnumber=Math.ceil(Math.random()*100);
+        function rand(){
+            let user=parseInt(document.getElementById("user").value);
+            let result=document.getElementById("result");
+            
+
+            if(targetnumber===user){
+                document.getElementById("result").textContent="correct";
+            }
+            else if(targetnumber<user){
+                document.getElementById("result").textContent="too large";
+            }
+            else if(targetnumber>user){
+                document.getElementById("result").textContent="too small";
+            }
+            else{
+                document.getElementById("result").textContent="invalid";
+            }
+        }
+        console.log(targetnumber);
+        
+    </script>
+</body>
+</html>
